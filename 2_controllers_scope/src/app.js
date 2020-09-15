@@ -1,12 +1,17 @@
-var app = angular.module('counter', []);
+var app = angular.module('counter', []); //setter syntax
 
-app.controller('CounterController', 
-                function CounterController($scope) {
-                    $scope.count = 0;
-                    $scope.increment = function() {
-                        $scope.count ++
-                    }
-                    $scope.decrement = function() {
-                        $scope.count --
-                    }
-                });
+angular.module('counter')
+            .controller('CounterController', CounterController);
+
+// CounterController.$inject = [];
+
+function CounterController() {
+    var ctrl = this; //doesnt break then store this in local variable
+    ctrl.count = 0;
+    ctrl.increment = function() {
+        ctrl.count ++;
+    }
+    ctrl.decrement = function() {
+       ctrl.count --;
+    }
+}

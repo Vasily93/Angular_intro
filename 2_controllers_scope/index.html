@@ -7,10 +7,10 @@
 </head>
 <body>
 
-    <div ng-controller ="CounterController">
-        <button ng-click="increment()">+</button>
-        <span>{{ count }}</span>
-        <button ng-click="decrement()">-</button>
+    <div ng-controller ="CounterController as ctrl">
+        <button ng-click="ctrl.increment()">+</button>
+        <span>{{ ctrl.count }}</span>
+        <button ng-click="ctrl.decrement()">-</button>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
